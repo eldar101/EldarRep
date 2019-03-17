@@ -1,0 +1,11 @@
+Please enter input: 
+The input string is: This is my example
+
+
+This is Eldar's input
+./
+!?!?!?
+
+
+()() /*----//
+

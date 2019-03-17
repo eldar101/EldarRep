@@ -1,0 +1,6 @@
+
+error:line 5 ,')' without opening bracket. The line:\*/)
+
+
+error:line 9 ,')' without opening bracket. The line:int x = 5*[2-1]*(5^2) / 5);
+

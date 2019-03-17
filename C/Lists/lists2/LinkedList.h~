@@ -1,0 +1,20 @@
+/*
+* Created on: May 09, 2017
+* By: Eldar Weiss
+* Linked List defined header.
+*/
+
+#ifndef LINKEDLIST_H_
+#define LINKEDLIST_H_
+
+typedef struct Node
+{
+    char value;
+    struct Node * next;
+};
+
+struct Node* head;
+
+
+#endif
+

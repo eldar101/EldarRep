@@ -1,0 +1,24 @@
+Please enter an integer: 
+the integer is: 180.000000
+Cosine in My cos: -0.598460
+Cosine in Math.h: -0.598460
+
+Please enter an integer: 
+the integer is: 89.000000
+Cosine in My cos: 0.510177
+Cosine in Math.h: 0.510177
+
+Please enter an integer: 
+the integer is: 32.800000
+Cosine in My cos: 0.185640
+Cosine in Math.h: 0.185640
+
+Please enter an integer: 
+the integer is: -5.000000
+Cosine in My cos: 0.283662
+Cosine in Math.h: 0.283662
+
+Please enter an integer: 
+the integer is: 123.000000
+Cosine in My cos: -0.887969
+Cosine in Math.h: -0.887969
