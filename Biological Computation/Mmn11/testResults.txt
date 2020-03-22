@@ -1,0 +1,88 @@
+2019-11-25T13:04:49.712220 Test - Active Rules: (MEMORY_ENABLED):
+Generation No. 20 - Overall Happiness: 23
+Generation No. 40 - Overall Happiness: 23
+Generation No. 60 - Overall Happiness: 25
+Generation No. 80 - Overall Happiness: 27
+Generation No. 100 - Overall Happiness: 27
+2019-11-25T13:04:52.446908800 Test - Active Rules: (LOYAL):
+Generation No. 20 - Overall Happiness: 18
+Generation No. 40 - Overall Happiness: 18
+Generation No. 60 - Overall Happiness: 19
+Generation No. 80 - Overall Happiness: 20
+2019-11-25T13:05:10.239336400 Test - Active Rules: (LOYAL, MEMORY_ENABLED):
+Generation No. 20 - Overall Happiness: 18
+Generation No. 40 - Overall Happiness: 19
+Generation No. 60 - Overall Happiness: 19
+Generation No. 80 - Overall Happiness: 19
+Generation No. 100 - Overall Happiness: 20
+2019-11-25T13:05:12.981004500 Test - Active Rules: (STATIONARY_PAIR):
+Generation No. 20 - Overall Happiness: 21
+Generation No. 40 - Overall Happiness: 25
+Generation No. 60 - Overall Happiness: 26
+Generation No. 80 - Overall Happiness: 27
+Generation No. 100 - Overall Happiness: 31
+2019-11-25T13:05:15.724669600 Test - Active Rules: (STATIONARY_PAIR, MEMORY_ENABLED):
+Generation No. 20 - Overall Happiness: 18
+Generation No. 40 - Overall Happiness: 20
+Generation No. 60 - Overall Happiness: 22
+Generation No. 80 - Overall Happiness: 22
+Generation No. 100 - Overall Happiness: 22
+2019-11-25T13:05:18.464344400 Test - Active Rules: (STATIONARY_PAIR, LOYAL):
+Generation No. 20 - Overall Happiness: 27
+Generation No. 40 - Overall Happiness: 29
+Generation No. 60 - Overall Happiness: 30
+Generation No. 80 - Overall Happiness: 31
+Generation No. 100 - Overall Happiness: 32
+2019-11-25T13:05:21.203022400 Test - Active Rules: (STATIONARY_PAIR, LOYAL, MEMORY_ENABLED):
+Generation No. 20 - Overall Happiness: 8
+2019-11-25T13:05:34.177330500 Test - Active Rules: (ALWAYS_PAIR):
+Generation No. 20 - Overall Happiness: 39
+Generation No. 40 - Overall Happiness: 39
+Generation No. 60 - Overall Happiness: 39
+Generation No. 80 - Overall Happiness: 39
+Generation No. 100 - Overall Happiness: 39
+2019-11-25T13:05:36.913016 Test - Active Rules: (ALWAYS_PAIR, MEMORY_ENABLED):
+Generation No. 20 - Overall Happiness: 37
+Generation No. 40 - Overall Happiness: 38
+Generation No. 60 - Overall Happiness: 38
+Generation No. 80 - Overall Happiness: 38
+Generation No. 100 - Overall Happiness: 38
+2019-11-25T13:05:39.657678100 Test - Active Rules: (ALWAYS_PAIR, LOYAL):
+Generation No. 20 - Overall Happiness: 33
+Generation No. 40 - Overall Happiness: 33
+Generation No. 60 - Overall Happiness: 33
+Generation No. 80 - Overall Happiness: 33
+Generation No. 100 - Overall Happiness: 33
+2019-11-25T13:05:42.402338500 Test - Active Rules: (ALWAYS_PAIR, LOYAL, MEMORY_ENABLED):
+Generation No. 20 - Overall Happiness: 31
+Generation No. 40 - Overall Happiness: 33
+Generation No. 60 - Overall Happiness: 33
+Generation No. 80 - Overall Happiness: 34
+Generation No. 100 - Overall Happiness: 34
+2019-11-25T13:05:45.144007800 Test - Active Rules: (ALWAYS_PAIR, STATIONARY_PAIR):
+Generation No. 20 - Overall Happiness: 37
+Generation No. 40 - Overall Happiness: 37
+Generation No. 60 - Overall Happiness: 37
+Generation No. 80 - Overall Happiness: 37
+Generation No. 100 - Overall Happiness: 37
+2019-11-25T13:05:47.883683500 Test - Active Rules: (ALWAYS_PAIR, STATIONARY_PAIR, MEMORY_ENABLED):
+Generation No. 20 - Overall Happiness: 39
+Generation No. 40 - Overall Happiness: 40
+Generation No. 60 - Overall Happiness: 40
+Generation No. 80 - Overall Happiness: 40
+Generation No. 100 - Overall Happiness: 40
+2019-11-25T13:05:50.620367700 Test - Active Rules: (ALWAYS_PAIR, STATIONARY_PAIR, LOYAL):
+Generation No. 20 - Overall Happiness: 35
+Generation No. 40 - Overall Happiness: 36
+Generation No. 60 - Overall Happiness: 36
+Generation No. 80 - Overall Happiness: 36
+Generation No. 100 - Overall Happiness: 36
+2019-11-25T13:05:53.361038500 Test - Active Rules: (ALWAYS_PAIR, STATIONARY_PAIR, LOYAL, MEMORY_ENABLED):
+Generation No. 20 - Overall Happiness: 31
+Generation No. 40 - Overall Happiness: 31
+2019-11-25T13:10:53.821669900 Test - Active Rules: (MEMORY_ENABLED):
+Generation No. 20 - Overall Happiness: 25
+Generation No. 40 - Overall Happiness: 28
+Generation No. 60 - Overall Happiness: 30
+Generation No. 80 - Overall Happiness: 31
+Generation No. 100 - Overall Happiness: 31
