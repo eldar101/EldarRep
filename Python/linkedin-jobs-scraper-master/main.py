@@ -1,8 +1,9 @@
-from selenium import webdriver
-from client import LIClient
-from settings import search_keys
 import argparse
 import time
+
+from client import LIClient
+from selenium import webdriver
+from settings import search_keys
 
 
 def parse_command_line_args():
