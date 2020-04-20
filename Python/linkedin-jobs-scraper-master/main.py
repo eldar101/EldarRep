@@ -78,8 +78,10 @@ if __name__ == "__main__":
     # wait for page load
     time.sleep(3)
 
-    assert isinstance(search_keys["keyword"], list)
-    assert isinstance(search_keys["location"], list)
+    if not isinstance(search_keys["keyword"], list):
+        raise AssertionError
+    if not isinstance(search_keys["location"], list):
+        raise AssertionError
 
     for keyword in search_keys["keyword"]:
         for location in search_keys["location"]:
