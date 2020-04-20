@@ -42,7 +42,7 @@ def parse_command_line_args():
         default=search_keys["locations"],
         nargs="*",
         help="""
-        enter search locations separated by a single space. If the location 
+        enter search locations separated by a single space. If the location
         search is more than one word, wrap the location in double quotes.
         """,
     )
@@ -52,7 +52,7 @@ def parse_command_line_args():
         default=search_keys["search_radius"],
         nargs="?",
         help="""
-        enter a search radius (in miles). Possible values are: 10, 25, 35, 
+        enter a search radius (in miles). Possible values are: 10, 25, 35,
         50, 75, 100. Defaults to 50.
         """,
     )
@@ -63,7 +63,7 @@ def parse_command_line_args():
         nargs="?",
         help="""
         enter a specific results page. If an unexpected error occurs, one can
-        resume the previous search by entering the results page where they 
+        resume the previous search by entering the results page where they
         left off. Defaults to first results page.
         """,
     )
@@ -83,8 +83,8 @@ def parse_command_line_args():
         default=search_keys["sort_by"],
         nargs="?",
         help="""
-        sort results by relevance or date posted. If the input string is not 
-        equal to 'Relevance' (case insensitive), then results will be sorted 
+        sort results by relevance or date posted. If the input string is not
+        equal to 'Relevance' (case insensitive), then results will be sorted
         by date posted. Defaults to sorting by relevance.
         """,
     )
