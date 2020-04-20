@@ -7,11 +7,9 @@ from settings import search_keys
 
 
 def parse_command_line_args():
-    parser = argparse.ArgumentParser(
-        description="""
+    parser = argparse.ArgumentParser(description="""
         parse LinkedIn search parameters
-        """
-    )
+        """)
     parser.add_argument(
         "--username",
         type=str,
