@@ -1,0 +1,12 @@
+Squeak commands
+
+
+* left side of = is the requested command, right side are the instructions
+* the arrow --> means next step
+
+
+a) workspace run command = scroll wheell-->click 'do it'. you can also use ctrl+d.
+b) find the method printOn = left button --> open --> method finder --> type printOn:. you can also use Tools--> method finder.
+c) find and jump to Object class = left button --> browser --> click the left table with all the classes --> ctrl+f --> type Object and click enter.
+d) find all methos that send printString = Tools--> Message Names --> type printString and click Search.
+e) (in my pc atleast) stop the targil.st loop =  the key combination "alt" and ".". This will bring up the user interrupt which you then can abandon or proceed.
