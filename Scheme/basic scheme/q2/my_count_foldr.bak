@@ -1,0 +1,9 @@
+#lang racket
+
+(define (my-foldr fn start lst)
+  (if (null? lst)
+      start
+      (fn (car lst) (my-foldr fn start (cdr lst)))))
+
+(define my_count positive? list-new)
+(my-foldr + 0 list-new)
