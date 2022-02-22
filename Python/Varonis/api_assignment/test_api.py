@@ -2,9 +2,10 @@
 """
 Test to check api calls in in varonis assignment
 """
-
-import requests
 import json
+import pytest
+import requests
+
 
 URL = "http://localhost:8000"
 data = {
