@@ -25,10 +25,6 @@ echo '[core]
 [remote "upstream"]
         url = https://gitlab.cee.redhat.com/ocp-edge-qe/ocp-edge-auto.git
         fetch = +refs/heads/*:refs/remotes/upstream/*
-[credential]
-        username = eweiss
-[credential]
-        password = "Blue30eldarweiss"'  >> /home/kni/ocp-edge-auto/.git/config
 git config pull.rebase false
 git config --global user.name "Eldar Weiss"
 git checkout master
