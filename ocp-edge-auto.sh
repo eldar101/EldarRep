@@ -24,7 +24,7 @@ echo '[core]
         merge = refs/heads/master
 [remote "upstream"]
         url = https://gitlab.cee.redhat.com/ocp-edge-qe/ocp-edge-auto.git
-        fetch = +refs/heads/*:refs/remotes/upstream/*
+        fetch = +refs/heads/*:refs/remotes/upstream/*'  >> /home/kni/ocp-edge-auto/.git/config
 git config pull.rebase false
 git config --global user.name "Eldar Weiss"
 git checkout master
