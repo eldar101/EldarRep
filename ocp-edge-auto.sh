@@ -30,3 +30,7 @@ git config --global user.name "Eldar Weiss"
 git checkout master
 git fetch upstream
 git merge upstream/master
+git pull
+git config --global user.email "eweiss@redhat.com"
+git config --global credential.helper cache
+sudo yum install mlocate -y; sudo updatedb; sudo yum install vim -y;export KUBECONFIG=/home/kni/clusterconfigs/auth/kubeconfig
