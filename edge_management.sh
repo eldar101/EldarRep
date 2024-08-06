@@ -35,7 +35,7 @@ systemctl --user enable --now podman.socket
 
 # Create a modified values.yaml
 cp /home/kni/flightctl/deploy/helm/flightctl/values.yaml /home/kni/flightctl/deploy/helm/flightctl/values_new.yaml
-perl -pi -e 's/api\.flightctl\.example\.com/api.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s/agent-api\.flightctl\.example\.com/agent-api.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s/agent-grpc\.flightctl\.example\.com/agent-grpc.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s|grpcs://agent-grpc\.flightctl\.example\.com|grpcs://agent-grpc.apps.ocp-edge-cluster-0.qe.lab.redhat.com|g; s/aws-ebs/standard/g; s/aws-efs-tier-c4/standard-multiaccess/g' /home/kni/flightctl/deploy/helm/flightctl/values_new.yaml
+sudo perl -pi -e 's/api\.flightctl\.example\.com/api.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s/agent-api\.flightctl\.example\.com/agent-api.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s/agent-grpc\.flightctl\.example\.com/agent-grpc.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s|grpcs://agent-grpc\.flightctl\.example\.com|grpcs://agent-grpc.apps.ocp-edge-cluster-0.qe.lab.redhat.com|g; s/aws-ebs/standard/g; s/aws-efs-tier-c4/standard-multiaccess/g' /home/kni/flightctl/deploy/helm/flightctl/values_new.yaml
 
 # Create the namespaces
 oc create namespace flightctl-internal 
