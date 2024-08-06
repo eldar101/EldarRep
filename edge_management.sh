@@ -38,9 +38,12 @@ sudo yum install -y glibc-devel.i686 --allowerasing
 wget https://go.dev/dl/go1.22.5.linux-386.tar.gz
 sudo tar -C /usr/local -xzf go1.22.5.linux-386.tar.gz
 export PATH=$PATH:/usr/local/go/bin
+go install sigs.k8s.io/kind@v0.23.0
 sudo yum install -y openssl
 sudo yum install -y openssl-devel
 sudo yum install -y podman-compose
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 susdo systemctl --user enable --now podman.socket
 
 # Create a modified values.yaml
