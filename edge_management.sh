@@ -15,11 +15,17 @@ sudo cp oc_bash_completion /etc/bash_completion.d/
 export KUBECONFIG=/home/kni/clusterconfigs/auth/kubeconfig
 
 # Install helm by using snapd
-curl -L https://mirror.openshift.com/pub/openshift-v4/clients/helm/latest/helm-linux-amd64 -o /usr/local/bin/helm
-chmod +x /usr/local/bin/helm
+# We download a repo from which we can later install snapd from
+sudo curl -L https://mirror.openshift.com/pub/openshift-v4/clients/helm/latest/helm-linux-amd64 -o /usr/local/bin/helm
+sudo chmod +x /usr/local/bin/helm
 sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 sudo dnf -y upgrade
-sudo snap install helm --classic -y
+sudo yum install -y snapd
+# snapd installtations wouldn't work without a symbolic link
+sudo ln -s /var/lib/snapd/snap /snap
+sudo systemctl enable --now snapd.socket
+# Now that snap is installed and enabled, we can install helm
+sudo snap install helm --classic
 
 # Set up flightctl repo
 git config --global http.sslVerify false
@@ -35,7 +41,7 @@ export PATH=$PATH:/usr/local/go/bin
 sudo yum install -y openssl
 sudo yum install -y openssl-devel
 sudo yum install -y podman-compose
-systemctl --user enable --now podman.socket
+susdo systemctl --user enable --now podman.socket
 
 # Create a modified values.yaml
 cp /home/kni/flightctl/deploy/helm/flightctl/values.yaml /home/kni/flightctl/deploy/helm/flightctl/values_new.yaml
