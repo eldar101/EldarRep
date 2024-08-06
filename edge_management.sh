@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# This is meant to be run from the provisionhost in the terminal.
 # Install OC on hypervisor
 cp openshift-client-linux-amd64-rhel8-4.16.0-ec.6.tar.gz root@10.46.4.68:/root/.
 exit
