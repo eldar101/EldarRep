@@ -20,7 +20,7 @@ wget https://go.dev/dl/go1.22.5.linux-386.tar.gz
 sudo tar -C /usr/local -xzf go1.22.5.linux-386.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 sudo yum install openssl
-sudo yum instal openssl-devel
+sudo yum install openssl-devel
 sudo yum install podman-compose
 systemctl --user enable --now podman.socket
 
