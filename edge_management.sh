@@ -25,6 +25,7 @@ sudo yum install -y snapd
 sudo ln -s /var/lib/snapd/snap /snap
 sudo systemctl enable --now snapd.socket
 # Now that snap is installed and enabled, we can install helm
+sleep 30s
 sudo snap install helm --classic
 
 # Set up flightctl repo
@@ -44,7 +45,7 @@ sudo yum install -y openssl-devel
 sudo yum install -y podman-compose
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-susdo systemctl --user enable --now podman.socket
+sudo systemctl --user enable --now podman.socket
 
 # Create a modified values.yaml
 cp /home/kni/flightctl/deploy/helm/flightctl/values.yaml /home/kni/flightctl/deploy/helm/flightctl/values_new.yaml
