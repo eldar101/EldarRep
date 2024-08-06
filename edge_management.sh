@@ -11,24 +11,25 @@ export KUBECONFIG=/home/kni/clusterconfigs/auth/kubeconfig
 # Install helm
 curl -L https://mirror.openshift.com/pub/openshift-v4/clients/helm/latest/helm-linux-amd64 -o /usr/local/bin/helm
 chmod +x /usr/local/bin/helm
-sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-sudo dnf upgrade
-sudo snap install helm --classic
-
-# Install prequisites
-wget https://go.dev/dl/go1.22.5.linux-386.tar.gz
-sudo tar -C /usr/local -xzf go1.22.5.linux-386.tar.gz
-export PATH=$PATH:/usr/local/go/bin
-sudo yum install openssl
-sudo yum install openssl-devel
-sudo yum install podman-compose
-systemctl --user enable --now podman.socket
+sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo dnf -y upgrade
+sudo snap install helm --classic -y
 
 # Set up repo
 git config --global http.sslVerify false
 git clone https://github.com/flightctl/flightctl
 cd flightctl
 git pull
+
+# Install prequisites
+sudo yum install -y glibc-devel.i686 --allowerasing
+wget https://go.dev/dl/go1.22.5.linux-386.tar.gz
+sudo tar -C /usr/local -xzf go1.22.5.linux-386.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+sudo yum install -y openssl
+sudo yum install -y openssl-devel
+sudo yum install -y podman-compose
+systemctl --user enable --now podman.socket
 
 # Create a modified values.yaml
 perl -pi -e 's/api\.flightctl\.example\.com/api.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s/agent-api\.flightctl\.example\.com/agent-api.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s/agent-grpc\.flightctl\.example\.com/agent-grpc.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s|grpcs://agent-grpc\.flightctl\.example\.com|grpcs://agent-grpc.apps.ocp-edge-cluster-0.qe.lab.redhat.com|g; s/aws-ebs/standard/g; s/aws-efs-tier-c4/standard-multiaccess/g' /home/kni/flightctl/deploy/helm/flightctl/values_new.yaml
