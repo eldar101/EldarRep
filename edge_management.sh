@@ -1,28 +1,29 @@
 #!/bin/bash
 # This is meant to be run from the provisionhost in the terminal, after openshift deployment, then exit and work from the kni user.
 
-# Install OC on hypervisor
+# Install OC on hypervisor by copying it from the provisionhost
 cp openshift-client-linux-amd64-rhel8-4.16.0-ec.6.tar.gz root@10.46.4.68:/root/.
 exit
-oc completion bash > oc_bash_completion
 cp oc /home/kni/.local/bin
+# Add oc autocompletion for easy use
+oc completion bash > oc_bash_completion
 sudo cp oc_bash_completion /etc/bash_completion.d/
 export KUBECONFIG=/home/kni/clusterconfigs/auth/kubeconfig
 
-# Install helm
+# Install helm by using snapd
 curl -L https://mirror.openshift.com/pub/openshift-v4/clients/helm/latest/helm-linux-amd64 -o /usr/local/bin/helm
 chmod +x /usr/local/bin/helm
 sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 sudo dnf -y upgrade
 sudo snap install helm --classic -y
 
-# Set up repo
+# Set up flightctl repo
 git config --global http.sslVerify false
 git clone https://github.com/flightctl/flightctl
 cd flightctl
 git pull
 
-# Install prequisites
+# Install flightctl prequisites: go (>1.21), Cgo, openssl, openssl-devel,podman-compose
 sudo yum install -y glibc-devel.i686 --allowerasing
 wget https://go.dev/dl/go1.22.5.linux-386.tar.gz
 sudo tar -C /usr/local -xzf go1.22.5.linux-386.tar.gz
