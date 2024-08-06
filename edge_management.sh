@@ -3,7 +3,7 @@
 
 # Install OC on hypervisor by copying it from the provisionhost
 cp openshift-client-linux-amd64-rhel8-4.16.0-ec.6.tar.gz root@10.46.4.68:/root/.
-exit
+return
 cp oc /home/kni/.local/bin
 # Add oc autocompletion for easy use
 oc completion bash > oc_bash_completion
