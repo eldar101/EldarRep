@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Install OC on hypervisor
+cp openshift-client-linux-amd64-rhel8-4.16.0-ec.6.tar.gz root@10.46.4.68:/root/.
+exit
+oc completion bash > oc_bash_completion
+cp oc /home/kni/.local/bin
+sudo cp oc_bash_completion /etc/bash_completion.d/
+export KUBECONFIG=/home/kni/clusterconfigs/auth/kubeconfig
+
+# Install helm
+curl -L https://mirror.openshift.com/pub/openshift-v4/clients/helm/latest/helm-linux-amd64 -o /usr/local/bin/helm
+chmod +x /usr/local/bin/helm
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo dnf upgrade
+sudo snap install helm --classic
+
+# Install prequisites
+wget https://go.dev/dl/go1.22.5.linux-386.tar.gz
+sudo tar -C /usr/local -xzf go1.22.5.linux-386.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+sudo yum install openssl
+sudo yum instal openssl-devel
+sudo yum install podman-compose
+systemctl --user enable --now podman.socket
+
+# Set up repo
+git config --global http.sslVerify false
+git clone https://github.com/flightctl/flightctl
+cd flightctl
+git pull
+
+# Create a modified values.yaml
+perl -pi -e 's/api\.flightctl\.example\.com/api.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s/agent-api\.flightctl\.example\.com/agent-api.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s/agent-grpc\.flightctl\.example\.com/agent-grpc.apps.ocp-edge-cluster-0.qe.lab.redhat.com/g; s|grpcs://agent-grpc\.flightctl\.example\.com|grpcs://agent-grpc.apps.ocp-edge-cluster-0.qe.lab.redhat.com|g; s/aws-ebs/standard/g; s/aws-efs-tier-c4/standard-multiaccess/g' /home/kni/flightctl/deploy/helm/flightctl/values_new.yaml
+
+# Install flightctl with the new values.yaml
+helm install --values /home/kni/flightctl/deploy/helm/flightctl/values_new.yaml flightctl ./deploy/helm/flightctl/
+mkdir -p ~/.flightctl/certs
+
+# Modify certs
+API_POD=$(oc get pod -n flightctl-external -l flightctl.service=flightctl-api --no-headers -o custom-columns=":metadata.name" | head -1 )
+
+for f in certs/{ca.crt,client-enrollment.crt,client-enrollment.key} client.yaml; do
+	# a kubectl cp would be more efficient, but tar is not available on the image, and we don't want
+	# to switch from ubi9-micro just for tar
+	oc exec -n flightctl-external "${API_POD}"  -- cat /root/.flightctl/$f > ~/.flightctl/$f
+  done
+
+  chmod og-rwx ~/.flightctl/certs/*.key
+
+# Run make and login
+Make
+/bin/flightctl login https://api.apps.ocp-edge-cluster-0.qe.lab.redhat.com
+
+# Verify devices and pods
+oc get pods -n flightctl-internal 
+oc get pods -n flightctl-external
+./bin/flightctl get device 
+
