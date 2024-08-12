@@ -1,5 +1,5 @@
 #!/bin/bash
-# This is meant to be run from the provisionh in the terminal, after openshift deployment, then exit and work from the kni user.
+# This is meant to be run from the provisionhost in the terminal, after openshift deployment, then exit and work from the kni user.
 
 # Install OC on hypervisor by copying it from the provisionhost
 scp /home/kni/openshift-client-linux-amd64-rhel8-4.16.0-0.nightly-2024-08-01-082745.tar.gz root@10.46.4.68:/root/.
