@@ -36,8 +36,8 @@ git pull
 
 # Install flightctl prequisites: go (>1.21), Cgo, openssl, openssl-devel,podman-compose
 sudo yum install -y glibc-devel.i686 --allowerasing
-wget https://go.dev/dl/go1.22.5.linux-386.tar.gz
-sudo tar -C /usr/local -xzf go1.22.5.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.22.5.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.22.5.sudo tar -C /usr/local -xzf go1.22.5.linux-amd64.tar.gz.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 go install sigs.k8s.io/kind@v0.23.0
 sudo yum install -y openssl
